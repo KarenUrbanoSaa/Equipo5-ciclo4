@@ -14,4 +14,67 @@ const calcularPocentajes = (limiteCO, limiteCO2, limiteHC, limiteO2, valorCO, va
     return nivelEmisiones;
 }
 
+const registrarCO = (value) => {
+    if (value >= rangosCO[0].de && value <= rangosCO[0].hasta) {
+        console.log(rangosCO[0].etiqueta)
+        return rangosCO[0].etiqueta;
+    }
+    if (value >= rangosCO[1].de && value <= rangosCO[1].hasta) {
+        console.log(rangosCO[1].etiqueta)
+        return rangosCO[1].etiqueta;
+    }
+    if (value > 15 || value < 0) {
+        console.log("fuera_de_rango")
+        return "fuera_de_rango";
+    }
+
+}
+const registrarCO2 = (value) => {
+    if (value >= rangosCO2[0].de && value <= rangosCO2[0].hasta) {
+        console.log(rangosCO2[0].etiqueta)
+        return rangosCO2[0].etiqueta;
+    }
+    if (value >= rangosCO2[1].de && value <= rangosCO2[1].hasta) {
+        console.log(rangosCO2[1].etiqueta)
+        return rangosCO2[1].etiqueta;
+    }
+    if (value > 30 || value < 0) {
+        console.log("fuera_de_rango")
+        return "fuera_de_rango";
+    }
+
+}
+const registrarHC = (value) => {
+    if (value >= rangosHC[0].de && value <= rangosHC[0].hasta) {
+        console.log(rangosHC[0].etiqueta)
+        return rangosHC[0].etiqueta;
+    }
+    if (value >= rangosHC[1].de && value <= rangosHC[1].hasta) {
+        console.log(rangosHC[1].etiqueta)
+        return rangosHC[1].etiqueta;
+    }
+    if (value > 11000 || value < 0) {
+        console.log("fuera_de_rango")
+        return "fuera_de_rango";
+    }
+
+}
+const registrarO2 = (value) => {
+    if (value >= rangosO2[0].de && value <= rangosO2[0].hasta) {
+        console.log(rangosO2[0].etiqueta)
+        return rangosO2[0].etiqueta;
+    }
+    if (value >= rangosO2[1].de && value <= rangosO2[1].hasta) {
+        console.log(rangosO2[1].etiqueta)
+        return rangosO2[1].etiqueta;
+    }
+    if (value > 30 || value < 0) {
+        console.log("fuera_de_rango")
+        return "fuera_de_rango";
+    }
+}
+module.exports.registrarCO = registrarCO;
+module.exports.registrarCO2 = registrarCO2;
+module.exports.registrarHC = registrarHC;
+module.exports.registrarO2 = registrarO2;
 module.exports.calcularPocentajes = calcularPocentajes;
